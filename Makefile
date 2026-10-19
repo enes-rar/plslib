@@ -4,4 +4,4 @@ ifeq ($(OS), Windows_NT)
 endif
 
 all:
-	gcc $(CFLAGS) $(LDFLAGS) main.c -nostdlib -std=c89 -Wextra -Wall -Werror -o program.exe
+	gcc main.c plsmalloc.c plsrand_t.c plsrand.c plssrand.c $(CFLAGS) $(LDFLAGS) -nostdlib -fno-leading-underscore -std=c89 -Wextra -Wall -Werror -o pro.exe

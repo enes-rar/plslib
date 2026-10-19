@@ -1,4 +1,4 @@
-int mainCRTStartup(void){
-    
-    return 0;
+int main(){
+
+    return sizeof(unsigned long long int);
 }
