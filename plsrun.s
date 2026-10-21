@@ -1,5 +1,5 @@
-.global _start
-.global __main
+.globl _start
+.globl __main
 
 .text
 _start: 

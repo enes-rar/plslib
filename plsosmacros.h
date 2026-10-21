@@ -4,7 +4,7 @@ typedef char ____UNSAFE_COMP[(1 << 1 == 2) ? 1 : -1]; /* FIX LATER (MOVE TO ENTR
 #define __PLSOSMACROS__ 1
 
 #if defined(_WIN32)
-    #define _Uintptrt unsigned long long
+    #define ___Uintptrt unsigned long long
 
     #define ____FOPEN_SL 16 /* max file opened simul soft limit*/
 
@@ -17,13 +17,19 @@ typedef char ____UNSAFE_COMP[(1 << 1 == 2) ? 1 : -1]; /* FIX LATER (MOVE TO ENTR
     #define FORMAT_MESSAGE_FROM_HMODULE 0x00000800 /* formatmessage fallback if no message in system */
     #define ____FORMAT_DEF FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS | FORMAT_MESSAGE_FROM_HMODULE
 
-    #define BCRYPT_RNG_ALG_HANDLE (void **)0x00000081 /* FIX LATER (WIN8 COMP), windows crypto rng */
-    #define BCRYPT_RNG_ALGORITHM L"RNG" /* FIX LATER (WIN8 COMP), windows crypto rng */
+    #define BCRYPT_USE_SYSTEM_PREFERRED_RNG 0x00000002 /* FIX LATER (WIN8 COMP), windows crypto rng */
+    #define BCRYPT_USE_ENTROPY_IN_BUFFER 0x00000001 /* FIX LATER (VISTA COMP), windows crypto rng */
 
     #define STD_INPUT_HANDLE ((DWORD)-10)
     #define STD_OUTPUT_HANDLE ((DWORD)-11)
     #define STD_ERROR_HANDLE ((DWORD)-12)
 
+    #define CP_UTF8 65001
+    #define WC_ERR_INVALID_CHARS 0x80
+
+    #define CMDLINE_MAX_WCHARS  32767u /* incl. NUL */
+    #define CMDLINE_MAX_UTF8    (PLS_CMDLINE_MAX_WCHARS * 3u) /* worst case bytes */
+    #define ARGV_MAX            16384u /* at most 16383 args */
 #endif /* win */
 
 #endif /* __PLSUSER__ */

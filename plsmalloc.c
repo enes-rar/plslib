@@ -1,8 +1,8 @@
 #include "plsdef.h"
-#include "plsuser.h"
+#include "plsoslink.h"
 #include "plsdef.h"
 
-void* malloc(size_t size){ /* FIX LATER (ERROR HANDLING, NO COMP), returns free pointer if size = 0 */
+void* plsmalloc(size_t size){ /* FIX LATER (ERROR HANDLING, NO COMP), returns free pointer if size = 0 */
     HANDLE ____run_heap = GetProcessHeap();  /* FIX LATER (XP COMP) */
     
     size = (size == 0) ?

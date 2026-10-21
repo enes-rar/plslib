@@ -1,3 +1,3 @@
-#include "plsuser.h"
+#include "plsoslink.h"
 
-int WriteFile
+int WriteFile()

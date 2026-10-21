@@ -42,6 +42,9 @@ typedef long NTSTATUS; /* FIX LATER (SAL ANNO) */
 
 typedef PVOID BCRYPT_ALG_HANDLE;
 
+#define far 
+typedef int far *LPBOOL;
+
 typedef struct _OVERLAPPED {
   ULONG_PTR Internal;
   ULONG_PTR InternalHigh;

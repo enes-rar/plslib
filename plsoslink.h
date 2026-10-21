@@ -19,15 +19,16 @@
 
     __declspec(dllimport) void __stdcall ExitProcess(unsigned int uExitcode); /* kill yourself */
     __declspec(dllimport) LPWSTR __stdcall GetCommandLineW(void); /* unused */
-    __declspec(dllimport) LPWSTR* __stdcall CommandLineToArgW(LPCWSTR lpCmdLine, int* pNumArgs); /* unused */
+    __declspec(dllimport) int  __stdcall WideCharToMultiByte(unsigned int CodePage, DWORD dwFlags, LPWSTR lpWideCharStr, int cchWideChar, LPSTR lpMultiByteStr, int cbMultiByte, int lpDefaultChar, LPBOOL lpUsedDefaultChar);
     __declspec(dllimport) HLOCAL __stdcall LocalFree(HLOCAL hMem); /* unused */
     __declspec(dllimport) LPVOID __stdcall HeapAlloc(HANDLE hHeap, DWORD dwFlags, size_t dwBytes); /* malloc */
-    __declspec(dllimport) HANDLE __stdcall GetProcessHeap(); /* malloc */
+    __declspec(dllimport) HANDLE __stdcall GetProcessHeap(void); /* malloc */
     __declspec(dllimport) DWORD __stdcall GetLastError(DWORD dwFlags, LPCVOID lpSource, DWORD dwMessageId, DWORD dwLanguageId, LPTSTR lpBuffer, DWORD nSize); /* unused */
-    __declspec(dllimport) NTSTATUS __stdcall BCryptOpenAlgorithmProvider(BCRYPT_ALG_HANDLE *phAlgorithm, LPCWSTR pszAlgId, LPCWSTR pszImplementation, ULONG dwFlags);
+    __declspec(dllimport) NTSTATUS __stdcall BCryptGenRandom(BCRYPT_ALG_HANDLE *hAlgorithm, PUCHAR pbBuffer, ULONG cbBuffer, ULONG dwFlags);
     __declspec(dllimport) HANDLE WINAPI __stdcall GetStdHandle(DWORD nStdHandle); /* FIX LATER (ERR), stream */
     __declspec(dllimport) int __stdcall WriteFile(HANDLE hHandle, LPCVOID lpBuffer, DWORD nNumberOfBytesToWrite, LPDWORD lpNumberOfBytesWritten, LPOVERLAPPED lpOverlapped); /* FIX LATER (WIN7 COMP), stream */
-    
+
+
 #endif /* _WIN32 */
 
 #endif /* __PLSLINK__ */

@@ -2,6 +2,6 @@
 #define __PLSINT__ 1
 #include "plsosmacros.h"
 
-typedef _Uintptrt uintptr_t; /* FIX LATER (WORD SIZE 64?) */
+typedef ___Uintptrt uintptr_t; /* FIX LATER (WORD SIZE 64?) */
 
 #endif /* __PLSINT__ */

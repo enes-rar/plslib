@@ -1,6 +1,8 @@
 #include "plslib.h"
-#include "plsosmacros.h"
+#include "plsoslink.h"
 
 int plsrand_t(void){
-    return BCryptOpenAlgorithmProvider(BCRYPT_RNG_ALG_HANDLE, BCRYPT_RNG_ALGORITHM, NULL, 0);
+    unsigned char buf[32];
+    BCryptGenRandom(NULL, buf, 32, 0);
+    return 0;
 }
