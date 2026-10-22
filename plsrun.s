@@ -1,10 +1,8 @@
-.globl _start
+.intel_syntax noprefix
 .globl __main
 
 .text
-_start: 
-call main
-ret
 
 __main:
+call main
 ret
