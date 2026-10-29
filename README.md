@@ -1,4 +1,4 @@
-# super-couscous
+# plslib
 
 standard library for x86-64 windows 11-10 gcc/clang/msvc(partial)
 
